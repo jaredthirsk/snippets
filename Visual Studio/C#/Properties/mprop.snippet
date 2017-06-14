@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2008/CodeSnippet">
+<CodeSnippet Format="1.0.0">
+<Header>
+<Title>Manual property</Title>
+<Shortcut>mprop</Shortcut>
+<Description>
+Code snippet for manual get/set property with backing property.
+</Description>
+<Author>Jared Thirsk</Author>
+<SnippetTypes>
+<SnippetType>SurroundsWith</SnippetType>
+<SnippetType>Expansion</SnippetType>
+</SnippetTypes>
+</Header>
+<Snippet>
+<Declarations>
+
+<Literal Editable="true">
+ <ID>PropertyName</ID>
+ <ToolTip>Property name</ToolTip>
+ <Default>PropertyName</Default>
+ <Type>string</Type>
+</Literal>
+
+<Literal Editable="true">
+ <ID>FieldName</ID>
+ <ToolTip>Field name</ToolTip>
+ <Default>fieldName</Default>
+ <Type>string</Type>
+</Literal>
+
+<Literal Editable="true">
+ <ID>PropertyType</ID>
+ <ToolTip>Type</ToolTip>
+ <Default>string</Default>
+ <Type>string</Type>
+</Literal>
+
+</Declarations>
+
+<Code Language="CSharp">
+<![CDATA[
+		#region $PropertyName$
+
+		public $PropertyType$ $PropertyName$$selected$
+		{
+			get { return $FieldName$; }
+			set { $FieldName$ = value; }
+		} private $PropertyType$ $FieldName$;
+
+		#endregion
+
+		$end$]]>
+</Code>
+</Snippet>
+</CodeSnippet>
+</CodeSnippets>

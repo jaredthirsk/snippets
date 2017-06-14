@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2008/CodeSnippet">
+<CodeSnippet Format="1.0.0">
+<Header>
+<Title>OnCollectionChanged</Title>
+<Shortcut>oncol</Shortcut>
+<Description>
+Code snippet for implementation of CollectionChanged event.
+</Description>
+<Author>Jared Thirsk</Author>
+<SnippetTypes>
+<SnippetType>Expansion</SnippetType>
+</SnippetTypes>
+</Header>
+<Snippet>
+<Declarations>
+<Literal Editable="true">
+ <ID>PropertyType</ID>
+ <ToolTip>Type</ToolTip>
+ <Default>string</Default>
+ <Type>string</Type>
+</Literal>
+
+</Declarations>
+
+<Code Language="CSharp">
+<![CDATA[
+        if (e.NewItems != null)
+        {
+            foreach (var item in e.NewItems.OfType<$PropertyType$>())
+            {
+				$end$
+            }
+        }
+        if (e.OldItems != null)
+        {
+            foreach (var item in e.OldItems.OfType<$PropertyType$>())
+            {
+			
+            }
+        }]]>
+</Code>
+</Snippet>
+</CodeSnippet>
+</CodeSnippets>

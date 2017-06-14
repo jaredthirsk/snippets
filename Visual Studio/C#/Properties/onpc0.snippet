@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2008/CodeSnippet">
+<CodeSnippet Format="1.0.0">
+<Header>
+<Title>OnPropertyChanging</Title>
+<Shortcut>onpc0</Shortcut>
+<Description>
+Code snippet for implementation of INotifyPropertyChanging.
+</Description>
+<Author>Jared Thirsk</Author>
+<SnippetTypes>
+<SnippetType>Expansion</SnippetType>
+</SnippetTypes>
+</Header>
+<Snippet>
+<Declarations>
+
+
+</Declarations>
+
+<Code Language="CSharp">
+<![CDATA[
+        #region INotifyPropertyChanging Implementation
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        private void OnPropertyChanging(string propertyName)
+        {
+            var ev = PropertyChanging;
+            if (ev != null) ev(this, new PropertyChangingEventArgs(propertyName));
+        }
+
+        #endregion		
+		$end$]]>
+</Code>
+</Snippet>
+</CodeSnippet>
+</CodeSnippets>
