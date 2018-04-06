@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2008/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>State Machine</Title>
+      <Shortcut>esmc</Shortcut>
+      <Description>
+        Implements IExecutable by providing a IStateMachine that uses ExecutionState and ExecutionTransition.  (Initialized in constructor.)
+      </Description>
+      <Author>Jared Thirsk</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+
+      </Declarations>
+
+      <Code Language="CSharp">
+        <![CDATA[
+		    #region State Machine
+
+        public IStateMachine<ExecutionState2, ExecutionTransition> StateMachine => stateMachine;
+        private IStateMachine<ExecutionState2, ExecutionTransition> stateMachine;
+
+        IStateMachine<ExecutionState2, ExecutionTransition> IIs<IStateMachine<ExecutionState2, ExecutionTransition>>.Object => stateMachine;
+
+        #endregion
+
+        // stateMachine = StateMachine<ExecutionState2, ExecutionTransition>.Create(this);
+		$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
